@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Transport Schedules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+    <style>
+        /* Mobile Navigation Styling */
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in-out;
+            width: 50vw;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+
+        /* When menu is open */
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Backdrop Effect */
+        #backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+
+        #backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>    
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+        <nav class="w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-route text-primary-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">TransitFlow</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="./index.html" class="text-gray-600 hover:text-primary-600">Home</a>
+                    <a href="./plan_dashboard.html" class="text-gray-600 hover:text-primary-600">Plan Your Trip</a>
+                    <a href="./pricing.html" class="text-gray-600 hover:text-primary-600">Ticket & Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Live Updates</a>
+                    <a href="./support.html" class="text-gray-600 hover:text-primary-600">Support & Safety</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div id="backdrop"></div>
+    <div id="mobile-menu">
+        <button id="close-btn" class="text-gray-600 absolute top-4 right-4">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <ul class="mt-6 space-y-6 text-center">
+            <li><a href="./index.html" class="text-gray-600 hover:text-primary-600 block">Home</a></li>
+            <li><a href="./plan_dashboard.html" class="text-gray-600 hover:text-primary-600 block">Plan Your Trip</a></li>
+            <li><a href="./pricing.html" class="text-gray-600 hover:text-primary-600 block">Ticket & Pricing</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary-600 block">Live Updates</a></li>
+            <li><a href="./support.html" class="text-gray-600 hover:text-primary-600 block">Support & Safety</a></li>
+        </ul>
+    </div>
+    <br><br><br>
+    <nav class="bg-gray-800 border-b border-gray-700">
+        <div class="max-w-8xl mx-auto px-2 sm:px-4 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo"/>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="./plan_dashboard.html" class="bg-custom text-white px-3 py-2 !rounded-button text-sm font-medium">Dashboard</a>
+                            <a href="./route.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 !rounded-button text-sm font-medium">Routes</a>
+                            <a href="./schedule.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 !rounded-button text-sm font-medium">Schedules</a>
+                            <a href="./fare_management.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 !rounded-button text-sm font-medium">Fares</a>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <div class="w-full lg:w-3/4">
+                <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 mb-4">
+                        <div class="relative flex-1">
+                            <input type="text" placeholder="Search routes, stations or destinations" class="w-full bg-gray-700 border-0 rounded-lg pl-10 pr-4 py-2 text-white placeholder-gray-400"/>
+                            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                        <button class="!rounded-button bg-custom px-4 py-2">
+                            <i class="fas fa-filter mr-2"></i>Filters
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 md:flex md:space-x-4 gap-2">
+                        <button class="!rounded-button flex-1 bg-gray-700 py-2 text-sm font-medium">
+                            <i class="fas fa-subway mr-2"></i>Metro
+                        </button>
+                        <button class="!rounded-button flex-1 bg-gray-700 py-2 text-sm font-medium">
+                            <i class="fas fa-bus mr-2"></i>Bus
+                        </button>
+                        <button class="!rounded-button flex-1 bg-gray-700 py-2 text-sm font-medium">
+                            <i class="fas fa-taxi mr-2"></i>Taxi
+                        </button>
+                        <button class="!rounded-button flex-1 bg-gray-700 py-2 text-sm font-medium">
+                            <i class="fas fa-walking mr-2"></i>Walking
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                    <h2 class="text-lg font-semibold mb-4">Next Departures</h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-700 rounded-lg p-4 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">M1</div>
+                                <div class="ml-4">
+                                    <div class="font-medium">Central Station → Airport</div>
+                                    <div class="text-sm text-gray-400">Platform 3</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-green-400">3 min</div>
+                                <div class="text-sm text-gray-400">On Time</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-700 rounded-lg p-4 flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center text-white font-bold">B24</div>
+                                <div class="ml-4">
+                                    <div class="font-medium">Downtown → Shopping Mall</div>
+                                    <div class="text-sm text-gray-400">Stop 12</div>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-bold text-yellow-400">7 min</div>
+                                <div class="text-sm text-gray-400">Slight Delay</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Weekly Schedule</h2>
+                    <div class="overflow-x-auto -mx-4 md:mx-0">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left border-b border-gray-700">
+                                    <th class="pb-3">Route</th>
+                                    <th class="pb-3">Destination</th>
+                                    <th class="pb-3">Departure</th>
+                                    <th class="pb-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-700">
+                                    <td class="py-3">M1</td>
+                                    <td>Airport</td>
+                                    <td>Every 10 min</td>
+                                    <td><span class="text-green-400">Normal Service</span></td>
+                                </tr>
+                                <tr class="border-b border-gray-700">
+                                    <td class="py-3">B24</td>
+                                    <td>Shopping Mall</td>
+                                    <td>Every 15 min</td>
+                                    <td><span class="text-yellow-400">Minor Delays</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/4 space-y-6">
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Live Map</h2>
+                    <div class="relative h-64 rounded-lg overflow-hidden">
+                        <img src="https://ai-public.creatie.ai/gen_page/map_placeholder_1280x720.png" alt="Map" class="absolute inset-0 w-full h-full object-cover"/>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <h2 class="text-lg font-semibold mb-4">Smart Insights</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-blue-400 mr-3"></i>
+                            <div>
+                                <div class="text-sm font-medium">Current Crowd Level</div>
+                                <div class="text-xs text-gray-400">Moderate</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cloud text-blue-400 mr-3"></i>
+                            <div>
+                                <div class="text-sm font-medium">Weather Impact</div>
+                                <div class="text-xs text-gray-400">No delays expected</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-blue-400 mr-3"></i>
+                            <div>
+                                <div class="text-sm font-medium">Best Time to Travel</div>
+                                <div class="text-xs text-gray-400">After 10:00 AM</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        const menuBtn = document.getElementById("menu-btn");
+        const closeBtn = document.getElementById("close-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const backdrop = document.getElementById("backdrop");
+
+        menuBtn.addEventListener("click", () => { mobileMenu.classList.add("open"); backdrop.classList.add("show"); });
+        closeBtn.addEventListener("click", () => { mobileMenu.classList.remove("open"); backdrop.classList.remove("show"); });
+        backdrop.addEventListener("click", () => { mobileMenu.classList.remove("open"); backdrop.classList.remove("show"); });
+    </script>
+
+
+</body></html>
