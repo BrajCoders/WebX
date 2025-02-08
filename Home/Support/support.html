@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support & Safety | Transit System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Mobile Navigation Styling */
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in-out;
+            width: 50vw;
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+
+        /* When menu is open */
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Backdrop Effect */
+        #backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+        }
+
+        #backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+        <nav class="w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-route text-primary-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">TransitFlow</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="../index.html" class="text-gray-600 hover:text-primary-600">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Plan Your Trip</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Ticket & Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Live Updates</a>
+                    <a href="./support.html" class="text-gray-600 hover:text-primary-600">Support & Safety</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div id="backdrop"></div>
+    <div id="mobile-menu">
+        <button id="close-btn" class="text-gray-600 absolute top-4 right-4">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <ul class="mt-6 space-y-6 text-center">
+            <li><a href="../index.html" class="text-gray-600 hover:text-primary-600 block">Home</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary-600 block">Plan Your Trip</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary-600 block">Ticket & Pricing</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-primary-600 block">Live Updates</a></li>
+            <li><a href="./support.html" class="text-gray-600 hover:text-primary-600 block">Support & Safety</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Transport Options -->
+            <div class="bg-white shadow rounded-lg p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-6">Available Transport Options</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="p-4 border rounded-lg text-center">
+                        <i class="fas fa-bus text-3xl text-primary-600 mb-2"></i>
+                        <h3 class="font-semibold">Bus Service</h3>
+                        <p class="text-sm text-gray-600">24/7 Operation</p>
+                    </div>
+                    <div class="p-4 border rounded-lg text-center">
+                        <i class="fas fa-train text-3xl text-primary-600 mb-2"></i>
+                        <h3 class="font-semibold">Train Service</h3>
+                        <p class="text-sm text-gray-600">Metro & Light Rail</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emergency Services -->
+            <div class="lg:col-span-2">
+                <div class="bg-white shadow rounded-lg p-6 mb-8">
+                    <h2 class="text-2xl font-bold mb-6">Emergency Services</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-red-700 mb-2">Police Emergency</h3>
+                            <p class="text-red-600 text-2xl font-bold mb-2">911</p>
+                            <button class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700">
+                                <i class="fas fa-phone-alt mr-2"></i> Call Police
+                            </button>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-blue-700 mb-2">Ambulance</h3>
+                            <p class="text-blue-600 text-2xl font-bold mb-2">911</p>
+                            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+                                <i class="fas fa-ambulance mr-2"></i> Call Ambulance
+                            </button>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-orange-700 mb-2">Fire Brigade</h3>
+                            <p class="text-orange-600 text-2xl font-bold mb-2">911</p>
+                            <button class="w-full bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700">
+                                <i class="fas fa-fire-extinguisher mr-2"></i> Call Fire Brigade
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const closeBtn = document.getElementById("close-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const backdrop = document.getElementById("backdrop");
+
+        menuBtn.addEventListener("click", () => { mobileMenu.classList.add("open"); backdrop.classList.add("show"); });
+        closeBtn.addEventListener("click", () => { mobileMenu.classList.remove("open"); backdrop.classList.remove("show"); });
+        backdrop.addEventListener("click", () => { mobileMenu.classList.remove("open"); backdrop.classList.remove("show"); });
+    </script>
+
+</body>
+</html>

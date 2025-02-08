@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Global Transit Connect</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 60%;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease-in-out;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-route text-primary-600 text-2xl"></i>
+                    <span class="text-xl font-bold text-gray-800">TransitFlow</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">PlanYourTrip</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">Ticket&Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-primary-600">LiveUpdates</a>
+                    <a href="./Support/support.html" class="text-gray-600 hover:text-primary-600">Support&Safety</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="mobile-nav p-6">
+                    <button id="close-btn" class="text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                    <ul class="mt-6 space-y-4">
+                        <li><a href="./index.html class="text-gray-600 hover:text-primary-600 block">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-600 block">PlanYourTrip</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-600 block">Ticket&Pricing</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-primary-600 block">LiveUpdates</a></li>
+                        <li><a href="./Support/support.html" class="text-gray-600 hover:text-primary-600 block">Support&Safety</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="pt-20">
+        <section class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800">
+                        Smart Transit for a Connected World
+                    </h1>
+                    <p class="text-gray-600 text-lg">
+                        Real-time tracking, AI-powered routes, and seamless connectivity for your daily commute.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700">
+                            Get Started
+                        </button>
+                        <button class="border border-primary-600 text-primary-600 px-6 py-3 rounded-lg hover:bg-primary-50">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3D Earth Image Placeholder -->
+                <div class="relative">
+                    <img src="./images/the-earth-in-half-hqg0dwacfj0rr8el.jpg" alt="3D Earth" class="w-full max-w-lg mx-auto"/ style="border-radius: 15px;">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-gray-50 py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Feature 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-bus text-primary-600 text-2xl"></i>
+                            <h3 class="text-xl font-semibold">Live Tracking</h3>
+                        </div>
+                        <p class="text-gray-600">Track your bus or train in real-time with accurate ETAs</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-map-marked-alt text-primary-600 text-2xl"></i>
+                            <h3 class="text-xl font-semibold">Smart Routes</h3>
+                        </div>
+                        <p class="text-gray-600">AI-optimized routes based on traffic conditions</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <i class="fas fa-mobile-alt text-primary-600 text-2xl"></i>
+                            <h3 class="text-xl font-semibold">Mobile App</h3>
+                        </div>
+                        <p class="text-gray-600">Seamless mobile experience for on-the-go planning</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <!-- About -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold">TransitFlow</h4>
+                    <p class="text-gray-400">Smart mobility for smart cities</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-2">
+                    <h5 class="font-semibold mb-3">Quick Links</h5>
+                    <a href="#" class="block text-gray-400 hover:text-white">About Us</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Services</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Contact</a>
+                </div>
+
+                <!-- Resources -->
+                <div class="space-y-2">
+                    <h5 class="font-semibold mb-3">Resources</h5>
+                    <a href="#" class="block text-gray-400 hover:text-white">Help Center</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">API Documentation</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Blog</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeBtn = document.getElementById("close-btn");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+        });
+
+        closeBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+        });
+    </script>
+
+</body>
+</html>
