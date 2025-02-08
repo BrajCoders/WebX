@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Travel Booking System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo">
+                    </div>                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="!rounded-button bg-custom text-white px-4 py-2 text-sm font-medium">Sign In</button>
+                    <button class="!rounded-button border border-custom text-custom px-4 py-2 text-sm font-medium">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="relative">                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-plane-departure text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md" placeholder="From (Source)">                </div>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">                        <i class="fas fa-plane-arrival text-gray-400"></i>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md" placeholder="To (Destination)">                </div>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">                        <i class="fas fa-calendar text-gray-400"></i>
+                    </div>
+                    <input type="date" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md">                </div>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">                        <i class="fas fa-user text-gray-400"></i>
+                    </div>
+                    <select class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md">                        <option>1 Passenger</option>
+                        <option>2 Passengers</option>
+                        <option>3 Passengers</option>
+                        <option>4+ Passengers</option>
+                    </select>
+                </div>            </div>
+            <div class="mt-4 flex justify-center">
+                <button class="!rounded-button bg-custom text-white px-8 py-3 font-medium">Search Routes</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2">                <div class="bg-white rounded-lg shadow-sm overflow-hidden h-[600px]">
+                    <img src="https://ai-public.creatie.ai/gen_page/map_placeholder_1280x720.png" class="w-full h-full object-cover" alt="Map">                </div>
+            </div>
+
+            <div class="lg:col-span-3 space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-4 flex items-center justify-between">                    <div class="flex space-x-4">
+                        <button class="!rounded-button px-4 py-2 bg-custom text-white font-medium">All</button>
+                        <button class="!rounded-button px-4 py-2 bg-gray-100 text-gray-700 font-medium">Trains</button>                        <button class="!rounded-button px-4 py-2 bg-gray-100 text-gray-700 font-medium">Buses</button>
+                        <button class="!rounded-button px-4 py-2 bg-gray-100 text-gray-700 font-medium">Flights</button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600">Sort by:</span>
+                        <select class="border-0 text-sm text-gray-600 focus:ring-0">
+                            <option>Price</option>
+                            <option>Duration</option>
+                            <option>Departure</option>
+                        </select>                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-sm p-4">                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">                                <div class="p-3 bg-blue-50 rounded-full">
+                                    <i class="fas fa-plane text-custom text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium">American Airlines</h3>
+                                    <p class="text-sm text-gray-600">Flight AA123</p>
+                                </div>                            </div>
+                            <div class="text-right">
+                                <p class="font-medium text-lg">$299</p>
+                                <p class="text-sm text-gray-600">per person</p>
+                            </div>
+                        </div>                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-8">                                <div>
+                                    <p class="font-medium">08:00 AM</p>
+                                    <p class="text-sm text-gray-600">New York (JFK)</p>
+                                </div>
+                                <div class="flex-1 border-t border-gray-300 w-24"></div>
+                                <div>
+                                    <p class="font-medium">11:30 AM</p>
+                                    <p class="text-sm text-gray-600">Los Angeles (LAX)</p>
+                                </div>
+                            </div>
+                            <button class="!rounded-button bg-custom text-white px-6 py-2 text-sm font-medium"><a href='select.html'>BOOK NOW</a></button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-4">                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">                                <div class="p-3 bg-blue-50 rounded-full">
+                                    <i class="fas fa-train text-custom text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium">Amtrak</h3>
+                                    <p class="text-sm text-gray-600">Train 456</p>
+                                </div>                            </div>
+                            <div class="text-right">
+                                <p class="font-medium text-lg">$199</p>
+                                <p class="text-sm text-gray-600">per person</p>
+                            </div>
+                        </div>                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-8">                                <div>
+                                    <p class="font-medium">09:15 AM</p>
+                                    <p class="text-sm text-gray-600">New York (Penn)</p>
+                                </div>
+                                <div class="flex-1 border-t border-gray-300 w-24"></div>
+                                <div>
+                                    <p class="font-medium">03:45 PM</p>
+                                    <p class="text-sm text-gray-600">Los Angeles (Union)</p>
+                                </div>
+                            </div>
+                            <button class="!rounded-button bg-custom text-white px-6 py-2 text-sm font-medium"><a href="select.html" >Book Now</a></button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-sm p-4">                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">                                <div class="p-3 bg-blue-50 rounded-full">
+                                    <i class="fas fa-bus text-custom text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium">Greyhound</h3>
+                                    <p class="text-sm text-gray-600">Bus 789</p>
+                                </div>                            </div>
+                            <div class="text-right">
+                                <p class="font-medium text-lg">$89</p>
+                                <p class="text-sm text-gray-600">per person</p>
+                            </div>
+                        </div>                        <div class="mt-4 flex items-center justify-between">
+                            <div class="flex items-center space-x-8">                                <div>
+                                    <p class="font-medium">10:30 AM</p>
+                                    <p class="text-sm text-gray-600">New York (Port)</p>
+                                </div>
+                                <div class="flex-1 border-t border-gray-300 w-24"></div>
+                                <div>
+                                    <p class="font-medium">08:30 PM</p>
+                                    <p class="text-sm text-gray-600">Los Angeles (Station)</p>
+                                </div>
+                            </div>
+                            <button class="!rounded-button bg-custom text-white px-6 py-2 text-sm font-medium"><a href='select.htmL'>Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+
+    <footer class="bg-gray-800 mt-12">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">                <div>
+                    <h3 class="text-white font-medium mb-4">About Us</h3>
+                    <ul class="space-y-2">                        <li><a href="#" class="text-gray-300 hover:text-white">Company</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Press</a></li>
+                    </ul>                </div>
+                <div>
+                    <h3 class="text-white font-medium mb-4">Support</h3>
+                    <ul class="space-y-2">                        <li><a href="#" class="text-gray-300 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-medium mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Terms</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>                    <h3 class="text-white font-medium mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700">                <p class="text-gray-300 text-center">&copy; 2024 Travel Booking System. All rights reserved.</p>
+            </div>        </div>
+    </footer>
+</body>
+</html>
+    
