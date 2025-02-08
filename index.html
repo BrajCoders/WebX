@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Transportation - Easy Travel Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
+  <script
+    src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+  <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+    data-border-radius="small"></script>
+</head>
+
+<body class="bg-gray-50">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <div class="max-w-8xl mx-auto px-4">
+      <div class="flex justify-between items-center h-16">
+
+        <div class="hidden md:flex items-center space-x-8"><a href="#" class="text-custom font-medium">Home</a>
+          <a href="#" class="text-gray-500 hover:text-custom font-medium">My Bookings</a>
+          <a href="#" class="text-gray-500 hover:text-custom font-medium">Support</a></div>
+        <div class="flex items-center space-x-4">
+          <button id="signInButton" class="!rounded-button bg-custom text-white px-4 py-2 font-medium hover:bg-indigo-600">
+            <i class="fas fa-user mr-2"></i>Sign In
+          </button>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="pt-20 pb-12">
+    <div class="max-w-8xl mx-auto px-4">
+      <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+        <h2 class="text-2xl font-semibold mb-6">Find Your Journey</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="relative">
+            <label class="block text-sm font-medium text-gray-700 mb-1">From</label>
+            <div class="relative">
+              <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+              <input type="text"
+                class="!rounded-button w-full pl-10 pr-3 py-2 border border-gray-300 focus:border-custom focus:ring-1 focus:ring-custom"
+                placeholder="Enter origin" />
+            </div>
+          </div>
+          <div class="relative">
+            <label class="block text-sm font-medium text-gray-700 mb-1">To</label>
+            <div class="relative">
+              <i class="fas fa-map-marker-alt absolute left-3 top-3 text-gray-400"></i>
+              <input type="text"
+                class="!rounded-button w-full pl-10 pr-3 py-2 border border-gray-300 focus:border-custom focus:ring-1 focus:ring-custom"
+                placeholder="Enter destination" />
+            </div>
+          </div>
+          <div class="relative">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+            <div class="relative">
+              <i class="far fa-calendar absolute left-3 top-3 text-gray-400"></i>
+              <input type="date"
+                class="!rounded-button w-full pl-10 pr-3 py-2 border border-gray-300 focus:border-custom focus:ring-1 focus:ring-custom" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Passengers</label>
+            <select
+              class="!rounded-button w-full py-2 border border-gray-300 focus:border-custom focus:ring-1 focus:ring-custom">
+              <option>1 Passenger</option>
+              <option>2 Passengers</option>
+              <option>3 Passengers</option>
+              <option>4+ Passengers</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-6 flex justify-center">
+          <button class="!rounded-button bg-custom text-white px-8 py-3 font-medium hover:bg-indigo-600">
+            Search Routes
+          </button>
+        </div>
+      </div>
+      <div class="mb-8">
+
+        <div class="w-full">
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg shadow-sm p-6 space-y-4">
+              <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                  <i class="fas fa-bus text-2xl text-custom"></i>
+                  <div>
+                    <h3 class="font-semibold">Express Bus</h3>
+                    <p class="text-sm text-gray-500">2h 30m journey</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-2xl font-semibold text-custom">$25</p>
+                  <p class="text-sm text-gray-500">per person</p>
+                </div>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <div class="flex space-x-8">
+                  <div>
+                    <p class="text-sm text-gray-500">Departure</p>
+                    <p class="font-medium">8:00 AM</p>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500">Arrival</p>
+                    <p class="font-medium">10:30 AM</p>
+                  </div>
+                </div>
+                <button class="!rounded-button bg-custom text-white px-6 py-2 font-medium hover:bg-indigo-600"
+                  onclick="document.querySelector(&#39;#id-75&#39;).classList.toggle(&#39;hidden&#39;)">Book
+                  Now</button>
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg hidden payment-section">
+                  <h4 class="font-medium mb-3">Select Payment Method</h4>
+                  <div class="space-y-2"><label class="flex items-center"><input type="radio" name="payment"
+                        class="text-custom" value="upi" /><span class="ml-2">UPI Payment</span></label><label
+                      class="flex items-center"><input type="radio" name="payment" class="text-custom"
+                        value="credit" /><span class="ml-2">Credit Card</span></label><label
+                      class="flex items-center"><input type="radio" name="payment" class="text-custom"
+                        value="debit" /><span class="ml-2">Debit Card</span></label><label
+                      class="flex items-center"><input type="radio" name="payment" class="text-custom"
+                        value="netbanking" /><span class="ml-2">Net Banking</span></label></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-6 space-y-4">
+              <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                  <i class="fas fa-train text-2xl text-custom"></i>
+                  <div>
+                    <h3 class="font-semibold">Express Train</h3>
+                    <p class="text-sm text-gray-500">1h 45m journey</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <p class="text-2xl font-semibold text-custom">$35</p>
+                  <p class="text-sm text-gray-500">per person</p>
+                </div>
+              </div>
+              <div class="mt-4 flex justify-between items-center">
+                <div class="flex space-x-8">
+                  <div>
+                    <p class="text-sm text-gray-500">Departure</p>
+                    <p class="font-medium">9:00 AM</p>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500">Arrival</p>
+                    <p class="font-medium">10:45 AM</p>
+                  </div>
+                </div>
+                <button class="!rounded-button bg-custom text-white px-6 py-2 font-medium hover:bg-indigo-600"
+                  onclick="document.querySelector(&#39;#id-106&#39;).classList.toggle(&#39;hidden&#39;)">Book
+                  Now</button>
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg hidden payment-section">
+                  <h4 class="font-medium mb-3">Select Payment Method</h4>
+                  <div class="space-y-2"><label class="flex items-center"><input type="radio" name="payment2"
+                        class="text-custom" value="upi" /><span class="ml-2">UPI Payment</span></label><label
+                      class="flex items-center"><input type="radio" name="payment2" class="text-custom"
+                        value="credit" /><span class="ml-2">Credit Card</span></label><label
+                      class="flex items-center"><input type="radio" name="payment2" class="text-custom"
+                        value="debit" /><span class="ml-2">Debit Card</span></label><label
+                      class="flex items-center"><input type="radio" name="payment2" class="text-custom"
+                        value="netbanking" /><span class="ml-2">Net Banking</span></label></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow-sm p-6">
+        <h3 class="font-semibold mb-4">Route Map</h3>
+        <div class="h-96 relative overflow-hidden rounded-lg">
+          <img src="https://ai-public.creatie.ai/gen_page/map_placeholder_1280x720.png"
+            class="absolute inset-0 w-full h-full object-cover" alt="Route Map" />
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-8xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-semibold mb-4">About Us</h4>
+          <p class="text-gray-400">Making travel easier and more accessible for everyone.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Bookings</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Routes</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="text-gray-400">Email: support@example.com</li>
+            <li class="text-gray-400">Phone: +1 234 567 890</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+        <p>© 2024 Transportation Booking. All rights reserved.</p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("signInButton").addEventListener("click", function () {
+        document.getElementById("signInModal").classList.remove("hidden");
+      });
+    
+      document.getElementById("closeModal").addEventListener("click", function () {
+        document.getElementById("signInModal").classList.add("hidden");
+      });
+    </script>
+    
+  </footer>
