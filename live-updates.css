@@ -1,0 +1,72 @@
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* 🔝 Header */
+header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* 🕒 Real-Time Transport Status */
+#real-time {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#arrival-list {
+    list-style: none;
+    padding: 0;
+}
+
+#arrival-list li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    background: #f8f8f8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🚦 Live Traffic Updates */
+#traffic {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔔 Alerts */
+#alerts {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 📢 News Ticker */
+#news {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎭 Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
