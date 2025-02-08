@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Transit - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-900 min-h-screen">
+    <div class="flex min-h-screen">
+        <div class="hidden lg:flex lg:w-1/2 relative">
+            <img src="log_image.PNG">
+            <div class="absolute bottom-8 left-8 text-white">
+                <h2 class="text-3xl font-bold mb-2">Smart Transit</h2>
+                <p class="text-gray-300 max-w-md">Experience the future of urban mobility with our integrated smart transit solutions.</p>
+            </div>
+        </div>
+        
+        <div class="w-full lg:w-1/2 flex flex-col">
+            <header class="p-6 flex justify-between items-center">
+                <span class = "text-white text-xl font-bold" >TRANSIT FLOW</span>
+                <div class="flex items-center gap-4">
+                    <select class="bg-gray-800 text-gray-300 border-0 !rounded-button py-1 px-3 text-sm focus:ring-2 focus:ring-custom">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                    </select>
+                    <button class="text-gray-300 hover:text-white">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                </div>
+            </header>
+            <main class="flex-grow flex items-center justify-center px-6 lg:px-16">
+                <div class="w-full max-w-md space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white">Welcome back</h2>
+                        <p class="mt-2 text-gray-400">Please sign in to your account</p>
+                    </div>
+                    <form class="mt-8 space-y-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300">Email</label>
+                                <div class="mt-1 relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <input type="email" required="" class="block w-full pl-10 !rounded-button bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-custom focus:border-custom" placeholder="Enter your email"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300">Password</label>
+                                <div class="mt-1 relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-400">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                    <input type="password" required="" class="block w-full pl-10 !rounded-button bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-custom focus:border-custom" placeholder="Enter your password"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input type="checkbox" class="h-4 w-4 !rounded-button bg-gray-800 border-gray-700 text-custom focus:ring-custom"/>
+                                <label class="ml-2 text-sm text-gray-300">Remember me</label>
+                            </div>
+                            <a href="#" class="text-sm text-custom hover:text-custom/80">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 !rounded-button bg-blue-600 hover:bg-blue-700 text-white font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Sign in
+                        </button>
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-700"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-gray-900 text-gray-400">Or continue with</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button type="button" class="flex justify-center items-center py-2 px-4 !rounded-button bg-gray-800 hover:bg-gray-700 border border-gray-700">
+                                <i class="fab fa-google text-[#EA4335]"></i>
+                            </button>
+                            <button type="button" class="flex justify-center items-center py-2 px-4 !rounded-button bg-gray-800 hover:bg-gray-700 border border-gray-700">
+                                <i class="fab fa-apple text-[#A2AAAD]"></i>
+                            </button>
+                            <button type="button" class="flex justify-center items-center py-2 px-4 !rounded-button bg-gray-800 hover:bg-gray-700 border border-gray-700">
+                                <i class="fab fa-facebook text-[#1877F2]"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-center text-sm text-gray-400">
+                        Don&#39;t have an account? 
+                        <a href="#" class="font-medium text-custom hover:text-custom/80">Sign up</a>
+                    </p>
+                </div>
+            </main>
+            <footer class="p-6 text-center text-sm text-gray-400">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Contact</a>
+                </div>
+                <p>© 2024 Smart Transit. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
