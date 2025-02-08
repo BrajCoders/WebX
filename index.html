@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Updates | TransitFlow</title>
+    <link rel="stylesheet" href="live-updates.css">
+    <script defer src="live-updates.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- 🔝 Header -->
+    <header>
+        <h1>🚏 Live Updates</h1>
+        <p>Stay updated with real-time transport information</p>
+    </header>
+
+    <!-- 🕒 Real-Time Transport Status -->
+    <section id="real-time">
+        <h2>🕒 Live Bus & Train Arrivals</h2>
+        <ul id="arrival-list"></ul>
+    </section>
+
+    <!-- 🚦 Live Traffic Conditions -->
+    <section id="traffic">
+        <h2>🚦 Traffic Updates</h2>
+        <p id="traffic-status">Fetching real-time traffic...</p>
+    </section>
+
+    <!-- 🔔 Urgent Alerts -->
+    <section id="alerts">
+        <h2>🔔 Important Transport Alerts</h2>
+        <div id="alert-container"></div>
+    </section>
+
+    <!-- 📢 News Ticker -->
+    <section id="news">
+        <h2>📢 Latest Transport News</h2>
+        <marquee behavior="scroll" direction="left" id="news-ticker">
+            🚆 Train A1 is delayed by 10 mins | 🚍 Bus 220 has a new schedule | 🏗️ Roadwork on Highway 5
+        </marquee>
+    </section>
+
+</body>
+</html>
