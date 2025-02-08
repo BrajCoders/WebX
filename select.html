@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet">
+    <script
+        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
+        data-border-radius="small"></script>
+</head>
+
+<body class="bg-gray-50 font-[Inter]">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center"> <img class="h-8 w-auto"
+                            src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <div class="lg:col-span-7">
+                <div class="bg-white shadow rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-6">Booking Summary</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="text-sm text-gray-500">Booking ID</p>
+                                <p class="font-medium">#BK123456789</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-500">Date & Time</p>
+                                <p class="font-medium">Mar 15, 2024 • 10:30 AM</p>
+                            </div>
+                        </div>
+                        <div class="border-t pt-4">
+                            <div class="flex items-center mb-4">
+                                <div class="w-full">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-4">
+                                            <i class="fas fa-train text-custom text-xl"></i>
+                                            <div>
+                                                <p class="font-medium">Express Train 123</p>
+                                                <p class="text-sm text-gray-500">First Class • Seat 12A</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-medium">$120.00</p>
+                                            <p class="text-sm text-gray-500">Base Fare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm text-gray-500"> <span>New York</span>
+                                <i class="fas fa-arrow-right text-xs"></i> <span>Boston</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-xl font-semibold mb-6">Payment Method</h2>
+                    <div class="space-y-4">
+                        <div class="relative">
+                            <input type="radio" name="payment" id="card" class="peer hidden" checked> <label for="card"
+                                class="flex items-center p-4 border rounded-lg cursor-pointer peer-checked:border-custom peer-checked:bg-custom/5">
+                                <i class="fas fa-credit-card text-custom mr-3"></i>
+                                <span class="font-medium">Credit/Debit Card</span>
+                            </label>
+                        </div>
+
+                        <div class="space-y-4 mt-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                <div class="relative">
+                                    <input type="text" class="w-full border-gray-300 rounded-lg pl-10 !rounded-button"
+                                        placeholder="1234 5678 9012 3456"> <i
+                                        class="fas fa-credit-card absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="col-span-2"> <label
+                                        class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-lg !rounded-button"
+                                        placeholder="MM/YY">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                    <input type="text" class="w-full border-gray-300 rounded-lg !rounded-button"
+                                        placeholder="123">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                                <input type="text" class="w-full border-gray-300 rounded-lg !rounded-button"
+                                    placeholder="John Doe">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center mt-4">
+                            <input type="checkbox" id="save-card" class="rounded border-gray-300 text-custom"> <label
+                                for="save-card" class="ml-2 text-sm text-gray-600">Save card for future payments</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 mt-6 lg:mt-0">
+                <div class="bg-white shadow rounded-lg p-6 sticky top-6">
+                    <h2 class="text-xl font-semibold mb-6">Price Details</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between"> <span class="text-gray-600">Base Fare</span>
+                            <span class="font-medium">$120.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Taxes</span>
+                            <span class="font-medium">$10.00</span>
+                        </div>
+                        <div class="flex justify-between"> <span class="text-gray-600">Service Fee</span>
+                            <span class="font-medium">$5.00</span>
+                        </div>
+                        <div class="pt-4 border-t">
+                            <div class="relative"> <input type="text"
+                                    class="w-full border-gray-300 rounded-lg pr-24 !rounded-button"
+                                    placeholder="Enter coupon code"> <button
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1 text-sm bg-custom text-white rounded !rounded-button">Apply</button>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t">
+                            <div class="flex justify-between text-lg font-semibold">
+                                <span>Total Amount</span> <span>$135.00</span>
+                            </div>
+                        </div>
+                    </div> <button class="w-full bg-custom text-white rounded-lg py-3 font-medium mt-6 !rounded-button">
+                        Pay Now
+                    </button>
+                    <div class="mt-6 flex items-center justify-center space-x-4 text-sm text-gray-500">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Payment</span>
+                        <i class="fas fa-shield-alt"></i>
+                        <span>SSL Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center text-sm text-gray-500">
+                <p>Need help? Contact our support team at support@example.com</p>
+                <div class="mt-4 space-x-4">
+                    <a href="#" class="hover:text-custom">Privacy Policy</a>
+                    <a href="#" class="hover:text-custom">Terms of Service</a>
+                    <a href="#" class="hover:text-custom">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
